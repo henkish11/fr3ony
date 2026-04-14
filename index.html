@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egypt Civilization UI</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap');
+
+body{
+    margin:0;
+    font-family:'Cinzel',serif;
+    overflow:hidden;
+    color:#f5d27a;
+}
+
+/* =========================
+   🔒 LOGIN BACKGROUND (NIGHT PYRAMIDS)
+========================= */
+#loginBg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020') center/cover no-repeat;
+    filter:brightness(0.35) contrast(1.2);
+    z-index:0;
+}
+
+/* =========================
+   🏛 MAIN BACKGROUND (DAY CIVILIZATION)
+========================= */
+#mainBg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://images.unsplash.com/photo-1548013146-72479768bada') center/cover no-repeat;
+    filter:brightness(0.45) contrast(1.1);
+    display:none;
+    z-index:0;
+}
+
+/* DARK OVERLAY FOR BOTH */
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:1;
+}
+
+/* =========================
+   🔒 LOGIN UI
+========================= */
+#login{
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.box{
+    width:360px;
+    padding:30px;
+    background:rgba(20,15,10,0.85);
+    border:2px solid gold;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 0 60px rgba(255,215,0,0.4);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    text-align:center;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    background:gold;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:10px;
+}
+
+/* =========================
+   🏛 MAIN CONTENT
+========================= */
+#content{
+    display:none;
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding-top:40px;
+}
+
+/* TITLE */
+.title{
+    font-size:40px;
+    text-shadow:0 0 30px gold;
+    margin-bottom:20px;
+}
+
+/* CARD STYLE */
+.card{
+    margin:20px auto;
+    width:85%;
+    max-width:850px;
+    padding:22px;
+    background:rgba(25,18,10,0.7);
+    border:1px solid rgba(255,215,0,0.4);
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 0 30px rgba(255,215,0,0.15);
+}
+
+/* BADGES */
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    margin:5px;
+    border:1px solid gold;
+    border-radius:20px;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔒 LOGIN BACKGROUND -->
+<div id="loginBg"></div>
+
+<!-- 🏛 MAIN BACKGROUND -->
+<div id="mainBg"></div>
+
+<div class="overlay"></div>
+
+<!-- LOGIN -->
+<div id="login">
+    <div class="box">
+        <h2>⚱ EGYPT PORTAL ⚱</h2>
+        <input type="password" id="pass" placeholder="Enter Ancient Code">
+        <button onclick="login()">ENTER KINGDOM</button>
+        <p id="msg"></p>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+
+<div class="title">👑 ANCIENT EGYPT CIVILIZATION</div>
+
+<div class="card">
+
+    <h2>👑 Ramy Pharaoh Profile</h2>
+
+    <p>I'm xats trader and I love trading very much and selling and buying ID's</p>
+
+    <p>iEgypt (106080) ❤️ DodoLove14 (1541187216)</p>
+
+    <p>ramy ❤️ Dodo</p>
+
+    <p>Age: 35</p>
+    <p>Status: Online</p>
+
+    <div>
+        <span class="badge">VIP Trader</span>
+        <span class="badge">Egypt Power</span>
+        <span class="badge">Civilization Mode</span>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function login(){
+    let pass=document.getElementById("pass").value;
+
+    if(pass==="111991"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("loginBg").style.display="none";
+        document.getElementById("mainBg").style.display="block";
+        document.getElementById("content").style.display="block";
+    } else {
+        document.getElementById("msg").innerText="❌ Wrong Ancient Code";
+    }
+}
+</script>
+
+</body>
+</html>
